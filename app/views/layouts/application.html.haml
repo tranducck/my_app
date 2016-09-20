@@ -8,4 +8,10 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    = render "layouts/header"
+    .container
+      - flash.each do |type, message|
+        %div{ class: "alert.alert-#{ type }" }
+          = message
+      = yield
+      = render "layouts/footer"
