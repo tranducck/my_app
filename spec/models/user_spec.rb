@@ -109,4 +109,14 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe "Check method" do
+    describe "#email_downcase" do
+      it "should word" do
+        user.email = "DUc@ExamplE.com"
+        user.save
+        expect(user.email).to eq("duc@example.com")
+      end
+    end
+  end
 end

@@ -1,0 +1,28 @@
+- provide(:title, "Signup")
+%h1 Sign Up
+.row
+  .col-md-6.col-md-offset-3
+    = form_for @user do |f|
+      = render "shared/error_messages", object: f.object
+
+      %label Name
+      = f.text_field :name, class: "form-control"
+
+      %label Email
+      = f.email_field :email, class: "form-control"
+
+      %label Password
+      = f.password_field :password, class: "form-control"
+
+      %label Confirmation
+      = f.password_field :password_confirmation, class: "form-control"
+
+      %label.col-md-3{ style: "text-align: left;" } Gender
+      .col-md-9
+        .col-md-6{ style: "text-align: center;" }
+          %label Male
+          = f.radio_button :gender, "Male", checked: true
+        .col-md-6{ style: "text-align: center;" }
+          %label Female
+          = f.radio_button :gender, "Female"
+      = f.submit "Create new account", class: "btn btn-primary", style: "margin-top: 10px;"

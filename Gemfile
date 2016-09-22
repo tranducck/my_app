@@ -32,6 +32,7 @@ gem "haml-rails", "~> 0.9"
 gem "will_paginate", "~> 3.1"
 gem "bootstrap-will_paginate", "~> 0.0.10"
 gem "bower-rails", "~> 0.10.0"
+gem "rails-controller-testing"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
