@@ -51,7 +51,7 @@ RSpec.describe UsersController, type: :controller do
         expect(response).to render_template(:new)
       end
     end
-    
+
     context "when email already taken" do
       before { FactoryGirl.create :user, email: "test@example.com" }
       it "should fail" do
